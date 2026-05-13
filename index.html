@@ -13,85 +13,15 @@
         body {
             background: #111111;
             color: #f5f5f5;
-            font-family: "微软雅黑", "黑体", sans-serif;
-            height: 100vh;
+            font-family: "Microsoft YaHei", "黑体", sans-serif;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
+            padding: 15px;
         }
 
-        .light-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(70px);
-            opacity: 0.25;
-            pointer-events: none;
-            z-index: 1;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-        }
-        .light-orb--1 {
-            width: 450px; height: 450px;
-            background: radial-gradient(circle, rgba(168, 209, 255, 0.5) 0%, transparent 70%);
-            top: -15%; left: -5%;
-            animation: orb1 14s infinite;
-        }
-        .light-orb--2 {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(210, 230, 248, 0.4) 0%, transparent 70%);
-            bottom: -10%; right: -3%;
-            animation: orb2 16s infinite;
-        }
-        @keyframes orb1 {
-            0% { transform: translate(0,0) scale(1); }
-            100% { transform: translate(60px,50px) scale(1.2); }
-        }
-        @keyframes orb2 {
-            0% { transform: translate(0,0) scale(1); }
-            100% { transform: translate(-50px,-40px) scale(1.15); }
-        }
-
-        .particles { position: absolute; width: 100%; height: 100%; top:0; left:0; z-index:2; pointer-events: none; }
-        .particle {
-            position: absolute; background: #fff; border-radius:50%; opacity:0;
-            animation: rise linear infinite;
-        }
-        .particle:nth-child(1) { width:3px; height:3px; left:10%; animation: rise 10s; }
-        .particle:nth-child(2) { width:2px; height:2px; left:25%; animation: rise 12s 1s; }
-        .particle:nth-child(3) { width:3px; height:3px; left:40%; animation: rise 9s 2s; }
-        .particle:nth-child(4) { width:2px; height:2px; left:60%; animation: rise 11s 0.5s; }
-        .particle:nth-child(5) { width:3px; height:3px; left:75%; animation: rise 10s 3s; }
-        .particle:nth-child(6) { width:2px; height:2px; left:90%; animation: rise 13s 1.5s; }
-        @keyframes rise {
-            0% { bottom:-5%; opacity:0; transform: scale(1); }
-            10% { opacity:0.8; }
-            50% { opacity:0.4; transform: scale(1.5); }
-            100% { bottom:105%; opacity:0; transform: scale(0.5); }
-        }
-
-        .sparkles { position: absolute; width:100%; height:100%; top:0; left:0; z-index:2; pointer-events: none; }
-        .sparkle {
-            position: absolute; width:4px; height:4px; background:#fff; border-radius:50%;
-            animation: twinkle 3s infinite ease-in-out;
-            box-shadow: 0 0 8px rgba(168, 209, 255, 0.6);
-        }
-        .sparkle:nth-child(1) { top:15%; left:20%; }
-        .sparkle:nth-child(2) { top:25%; left:80%; animation-delay:1s; }
-        .sparkle:nth-child(3) { top:60%; left:10%; animation-delay:0.5s; }
-        .sparkle:nth-child(4) { top:75%; left:90%; animation-delay:1.5s; }
-        .sparkle:nth-child(5) { top:40%; left:50%; animation-delay:2s; }
-        @keyframes twinkle {
-            0%,100% { opacity:0.2; transform: scale(0.8); }
-            50% { opacity:1; transform: scale(1.5); }
-        }
-
-        /* ==================== 强化版：卡片动态流动背景 ==================== */
         .card {
             position: relative;
             z-index: 10;
@@ -105,160 +35,120 @@
             background-size: 400% 100%;
             animation: cardFlow 8s linear infinite;
             backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 60px 70px;
-            max-width: 850px;
+            border-radius: 20px;
+            padding: 30px 25px;
             width: 100%;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.15);
+            max-width: 700px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
         }
+
         @keyframes cardFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        /* 七色发光分隔线 */
         .line-decor {
-            width: 580px;
-            height: 1px;
-            margin: 12px auto 18px;
-            border-radius: 3px;
+            width: 90%;
+            height: 2px;
+            margin: 10px auto 25px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             animation: lineFlow 6s linear infinite;
-            box-shadow: 0 0 10px rgba(255,255,255,0.6);
+            box-shadow: 0 0 8px rgba(255,255,255,0.4);
+            border-radius: 2px;
         }
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        @keyframes goldFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes whiteFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes shineFlow {
-            0% { background-position: -300% center; }
-            100% { background-position: 300% center; }
-        }
-
         .cn-welcome {
-            font-size: 50px;
+            font-size: 28px;
             font-weight: bold;
-            letter-spacing: 6px;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8, #e6c87a, #b88c42);
-            background-size: 300% 300%;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
+            background-size: 200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: goldFlow 7s ease-in-out infinite;
+            animation: goldFlow 5s infinite;
         }
         .jp-welcome {
-            font-size: 38px;
-            letter-spacing: 4px;
-            margin-bottom: 35px;
-            background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8, #e6c87a);
-            background-size: 300% 300%;
+            font-size: 22px;
+            margin: 4px 0 12px 0;
+            background: linear-gradient(90deg, #b88c42, #e6c87a);
+            background-size: 200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: goldFlow 8s ease-in-out infinite;
+            animation: goldFlow 6s infinite;
+        }
+        @keyframes goldFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
 
         .guest {
-            font-size: 36px;
-            line-height: 1.4;
-            font-weight: 600;
-            background: linear-gradient(90deg, #eeeeee, #ffffff, #f0f0f0, #ffffff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: whiteFlow 9s ease-in-out infinite;
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 500;
+            text-align: left;
+            margin: 0 auto 25px;
+            padding-left: 10px;
+            color: #fff;
         }
-
-        /* 字体嵌入 */
-        @font-face {
-            font-family: 'ArnoldBoeD';
-            src: url('字永浪.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
+        .guest span {
+            color: #5DACFF;
+            font-weight: 600;
         }
 
         .company {
-            font-size: 32px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: rgba(210, 230, 248, 0.9);
-            text-shadow: 0 0 15px rgba(168, 209, 255, 0.5);
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        .ew {
-            font-family: 'ArnoldBoeD', sans-serif;
-            font-size: 40px;
+            justify-content: flex-end;
+            gap: 8px;
+            font-size: 22px;
             color: rgba(210, 230, 248, 0.9);
-            text-shadow: 0 0 15px rgba(168, 209, 255, 0.6);
+            margin-bottom: 6px;
         }
-
+        .company img {
+            height: 26px;
+            width: auto;
+            filter: drop-shadow(0 0 6px rgba(168, 209, 255, 0.5));
+        }
         .leader {
-            font-size: 28px;
-            line-height: 1;
-            background: linear-gradient(90deg, #d2e6f8, #e8f2ff, #d2e6f8);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: shineFlow 7s ease-in-out infinite;
+            text-align: right;
+            font-size: 19px;
+            color: #a0b4d2;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="light-orb light-orb--1"></div>
-    <div class="light-orb light-orb--2"></div>
-
-    <div class="particles">
-        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-    </div>
-
-    <div class="sparkles">
-        <div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div>
-        <div class="sparkle"></div><div class="sparkle"></div>
-    </div>
-
-<!-- 内容卡片 -->
 <div class="card">
-    <div class="cn-welcome" style="margin-bottom: 0px;">热烈欢迎 贵宾莅临</div>
-    <div class="jp-welcome" style="margin-bottom: 0px;">ご来訪を心より歓迎いたします</div>
-    <div class="line-decor" style="margin: 0 auto 32px;"></div>
+    <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
+    <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
+    <div class="line-decor"></div>
 
-    <div class="guest" style="text-align: left; display: inline-block; margin-left: 70px;">
-        <span style="color: #5DACFF;">スガツネ工業株式会社</span><br>
+    <div class="guest">
+        <span>スガツネ工業株式会社</span><br>
         菅佐原社長<br>
-        <div style="height: 0.4em;"></div>
-        <span style="color: #5DACFF;">世嘉智尼五金配件(上海)有限公司</span><br>
+        <div style="height:0.3em;"></div>
+        <span>世嘉智尼五金配件(上海)有限公司</span><br>
         奥山副総経理<br>
-        <div style="height: 0.4em;"></div>
-        <span style="color: #5DACFF;">広州分公司</span><br>
+        <div style="height:0.3em;"></div>
+        <span>広州分公司</span><br>
         金総経理
     </div>
 
-<div class="company" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 40px; margin-bottom: 10px;">
-    <img src="ew-logo.png" alt="EW" style="height: 36px; width: auto; vertical-align: middle; filter: drop-shadow(0 0 8px rgba(168, 209, 255, 0.6));">
-    永浪有限公司
+    <div class="company">
+        <img src="ew-logo.png" alt="EW">
+        永浪有限公司
+    </div>
+    <div class="leader">森田携全体员工竭诚欢迎</div>
 </div>
-<div class="leader" style="text-align: right; font-size: 30px; color: #7A92B8;">森田携全体员工竭诚欢迎</div>
 
 </body>
 </html>
