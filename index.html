@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 竖屏全屏强制适配、禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>欢迎屏</title>
     <style>
         * {
@@ -10,17 +11,20 @@
             padding: 0;
             box-sizing: border-box;
         }
+        /* 竖屏全屏撑满 */
         body {
             background: #111111;
             color: #f5f5f5;
             font-family: "Microsoft YaHei", "黑体", sans-serif;
-            min-height: 100vh;
+            height: 100vh;
+            height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 30px 15px;
         }
 
+        /* 卡片竖屏拉大、占大部分屏幕 */
         .card {
             position: relative;
             z-index: 10;
@@ -35,9 +39,9 @@
             animation: cardFlow 8s linear infinite;
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 25px 20px;
+            padding: 60px 30px;
             width: 100%;
-            max-width: 650px;
+            max-width: 100%;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
         }
@@ -47,25 +51,27 @@
             100% { background-position: 100% 50%; }
         }
 
+        /* 七彩条左对齐 */
         .line-decor {
             width: 90%;
-            height: 1px;
-            margin: 8px 0 20px 10px;
+            height: 2px;
+            margin: 15px 0 30px 10px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             animation: lineFlow 6s linear infinite;
             box-shadow: 0 0 8px rgba(255,255,255,0.4);
-            border-radius: 1px;
+            border-radius: 2px;
         }
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
+        /* 竖屏放大字体 */
         .cn-welcome {
-            font-size: 24px;
+            font-size: 36px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -74,8 +80,8 @@
             animation: goldFlow 5s infinite;
         }
         .jp-welcome {
-            font-size: 18px;
-            margin: 4px 0 10px 0;
+            font-size: 28px;
+            margin: 8px 0 15px 0;
             background: linear-gradient(90deg, #b88c42, #e6c87a);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -89,12 +95,11 @@
         }
 
         .guest {
-            font-size: 17px;
-            line-height: 1.5;
+            font-size: 26px;
+            line-height: 1.6;
             font-weight: 500;
             text-align: left;
-            margin: 0 auto 20px;
-            padding-left: 10px;
+            margin: 0 0 40px 10px;
             color: #fff;
             white-space: nowrap;
         }
@@ -103,20 +108,24 @@
             font-weight: 600;
         }
 
+        /* Logo靠右 + 超强白光 */
         .company-logo {
             text-align: right;
-            margin-bottom: 2px;
+            margin-bottom: 8px;
+            padding-right: 10px;
         }
         .company-logo img {
-            height: 40px;
+            height: 50px;
             width: auto;
-            filter: drop-shadow(0 0 22px rgba(255, 255, 255, 1));
+            /* 白光拉到最强 */
+            filter: drop-shadow(0 0 30px rgba(255,255,255,1)) brightness(1.3);
         }
+        /* 底部文字和Logo同右对齐、对齐边距 */
         .leader {
             text-align: right;
-            font-size: 16px;
+            font-size: 24px;
             color: #a0b4d2;
-            padding-right: 2px;
+            padding-right: 10px;
         }
     </style>
 </head>
@@ -130,10 +139,10 @@
     <div class="guest">
         <span>スガツネ工業株式会社</span><br>
         菅佐原社長<br>
-        <div style="height:0.3em;"></div>
+        <div style="height:0.4em;"></div>
         <span>世嘉智尼五金配件(上海)有限公司</span><br>
         奥山副総経理<br>
-        <div style="height:0.3em;"></div>
+        <div style="height:0.4em;"></div>
         <span>広州分公司</span><br>
         金総経理
     </div>
