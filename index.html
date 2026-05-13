@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>欢迎屏</title>
     <style>
         * {
@@ -18,8 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 15px;
+            padding: 10px;
         }
 
         .card {
@@ -36,9 +35,9 @@
             animation: cardFlow 8s linear infinite;
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 30px 25px;
+            padding: 25px 20px;
             width: 100%;
-            max-width: 700px;
+            max-width: 650px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
         }
@@ -51,7 +50,7 @@
         .line-decor {
             width: 90%;
             height: 2px;
-            margin: 10px auto 25px;
+            margin: 8px auto 20px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             animation: lineFlow 6s linear infinite;
@@ -64,9 +63,9 @@
         }
 
         .cn-welcome {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -75,8 +74,8 @@
             animation: goldFlow 5s infinite;
         }
         .jp-welcome {
-            font-size: 22px;
-            margin: 4px 0 12px 0;
+            font-size: 18px;
+            margin: 4px 0 10px 0;
             background: linear-gradient(90deg, #b88c42, #e6c87a);
             background-size: 200% 100%;
             -webkit-background-clip: text;
@@ -90,13 +89,14 @@
         }
 
         .guest {
-            font-size: 20px;
+            font-size: 17px;
             line-height: 1.5;
             font-weight: 500;
             text-align: left;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             padding-left: 10px;
             color: #fff;
+            white-space: nowrap;
         }
         .guest span {
             color: #5DACFF;
@@ -107,26 +107,25 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 8px;
-            font-size: 22px;
+            gap: 6px;
+            font-size: 19px;
             color: rgba(210, 230, 248, 0.9);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         .company img {
-            height: 26px;
+            height: 22px;
             width: auto;
             filter: drop-shadow(0 0 6px rgba(168, 209, 255, 0.5));
         }
         .leader {
             text-align: right;
-            font-size: 19px;
+            font-size: 16px;
             color: #a0b4d2;
         }
     </style>
 </head>
 
 <body>
-
 <div class="card">
     <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
     <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
@@ -149,6 +148,5 @@
     </div>
     <div class="leader">森田携全体员工竭诚欢迎</div>
 </div>
-
 </body>
 </html>
