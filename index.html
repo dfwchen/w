@@ -78,11 +78,11 @@
         /* 七彩分隔线 */
         .line-decor {
             width: 90%;
-            height: 4px;
+            height: 1px;
             margin: 20px auto 50px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
-            animation: lineFlow 0.6s linear infinite;
+            animation: lineFlow 5s linear infinite;
             border-radius: 1px;
         }
 
@@ -105,10 +105,11 @@
             text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
         }
 
-        /* 底部公司 七彩流光 */
-        .company {
-            font-size: 54px;
+        /* ========== 底部三行统一样式：同字体、同字号、同行距 ========== */
+        .footer-row {
+            font-size: 48px;
             font-weight: bold;
+            line-height: 1.2;  /* 紧凑行距，和森田、全体员工一致 */
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             -webkit-background-clip: text;
@@ -116,29 +117,15 @@
             color: transparent;
             animation: rainbowFlow 3s infinite;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-            /* ========== 这里可以改上下间距，改数字就行 ========== */
-            margin-bottom: 40px; 
+            margin: 0;
+            padding: 0;
         }
 
-        .leader {
-            font-size: 42px;
-            line-height: 1.5;
-            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 700% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbowFlow 3s infinite;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-        }
-
-        @font-face {
-            font-family: 'ArnoldBoeD';
-            src: url('字永浪.ttf') format('truetype');
-        }
+        /* 取消单独特殊字体，EW和正文统一 */
         .ew {
-            font-family: 'ArnoldBoeD', sans-serif;
-            font-size: 60px;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
         }
     </style>
 </head>
@@ -148,7 +135,7 @@
     <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
     <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
     <div class="line-decor"></div>
-
+    <br><br><br>
     <div class="guest">
         <span class="com-name">スガツネ工業株式会社</span><br>
         <span class="person-name">菅佐原社長</span><br><br>
@@ -158,13 +145,11 @@
         <span class="person-name">金総経理</span>
     </div>
 
-    <div class="company">
-        <span class="ew">EW</span> 永浪有限公司
-    </div>
-    <div class="leader">
-        森田聖治を代表し<br>
-        全社員一同心より歓迎いたします
-    </div>
+    <!-- 底部三行 完全统一字体、大小、行距 -->
+    <div class="footer-row"><span class="ew">EW</span> 永浪有限公司</div>
+    <div class="footer-row">森田聖治を代表し</div>
+    <div class="footer-row">全社員一同心より歓迎いたします</div>
+
 </div>
 
 </body>
