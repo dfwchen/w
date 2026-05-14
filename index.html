@@ -53,7 +53,7 @@
 
         /* 顶部第一行 七彩+跳动 */
         .cn-welcome {
-            font-size: 90px;
+            font-size: 92px;
             font-weight: bold;
             letter-spacing: 8px;
             margin-bottom: 20px;
@@ -62,7 +62,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: rainbowFlow 5s infinite, bounce 7.2s infinite ease-in-out;
+            animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
@@ -78,12 +78,12 @@
         /* 七彩分隔线 */
         .line-decor {
             width: 90%;
-            height: 1px;
+            height: 2px;
             margin: 20px auto 50px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
-            animation: lineFlow 5s linear infinite;
-            border-radius: 4px;
+            animation: lineFlow 0.6s linear infinite;
+            border-radius: 1px;
         }
 
         /* 嘉宾整体文字 带阴影立体 */
@@ -105,27 +105,22 @@
             text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
         }
 
-        /* ========== 底部三行统一样式：同字体、同字号、同行距 ========== */
-        .footer-row {
-            font-size: 48px;
-            font-weight: bold;
-            line-height: 1.2;  /* 紧凑行距，和森田、全体员工一致 */
-            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 700% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbowFlow 60s infinite;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-            margin: 0;
-            padding: 0;
+        /* Logo 样式 */
+        .logo-img {
+            width: 260px;   /* 可自行调大小 */
+            height: auto;
+            margin-bottom: 3px; /* 紧贴下面文字，间距很小 */
         }
 
-        /* 取消单独特殊字体，EW和正文统一 */
-        .ew {
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
+        /* 底部两行文字：取消七彩特效，纯色+阴影 */
+        .footer-text {
+            font-size: 48px;
+            font-weight: 600;
+            color: #002b5c;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            line-height: 1.2;
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
@@ -144,11 +139,13 @@
         <span class="com-name">広州分公司</span><br>
         <span class="person-name">金総経理</span>
     </div>
-    <br><br>
-    <!-- 底部三行 完全统一字体、大小、行距 -->
-    <div class="footer-row"><span class="ew">EW</span> 永浪有限公司</div>
-    <div class="footer-row">森田聖治を代表し</div>
-    <div class="footer-row">全社員一同心より歓迎いたします</div>
+     <br><br>
+    <!-- 替换为logo图片，和下方文字紧贴 -->
+    <img src="new-ew-logo.png" alt="LOGO" class="logo-img">
+
+    <!-- 取消七彩特效，纯色立体文字 -->
+    <div class="footer-text">森田聖治を代表し</div>
+    <div class="footer-text">全社員一同心より歓迎いたします</div>
 
 </div>
 
