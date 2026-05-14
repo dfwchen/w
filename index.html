@@ -75,7 +75,6 @@
             color: transparent;
             animation: goldFlow 5s infinite;
             text-align: left;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .jp-welcome {
             font-size: 19px;
@@ -87,7 +86,6 @@
             color: transparent;
             animation: goldFlow 6s infinite;
             text-align: left;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         @keyframes goldFlow {
             0% { background-position: 0% 50%; }
@@ -107,11 +105,6 @@
             color: #5DACFF;
             font-weight: 500;
         }
-        /* 职位：保持白色本体 + 白色柔和光晕 */
-        .position {
-            color: #ffffff;
-            text-shadow: 0 0 8px rgba(255,255,255,0.8);
-        }
 
         .company-logo {
             text-align: left;
@@ -121,6 +114,7 @@
         .company-logo img {
             height: 50px;
             width: auto;
+            /* LOGO 加强白光发光 */
             filter: drop-shadow(0 0 22px rgba(255,255,255,1)) brightness(1.4);
         }
 
@@ -128,14 +122,17 @@
             text-align: left;
             font-size: 16px;
             padding-left: 0;
+            /* 流光金色效果（和顶部完全一致） */
             background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
             background-size: 200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            /* 反向流动动画 */
             animation: goldFlowReverse 5s infinite;
         }
 
+        /* 新增：反向流动动画 */
         @keyframes goldFlowReverse {
             0% { background-position: 200% 50%; }
             100% { background-position: 0% 50%; }
@@ -152,13 +149,13 @@
 
     <div class="guest">
         <span>スガツネ工業株式会社</span><br>
-        <span class="position">菅佐原社長</span><br>
+        菅佐原社長<br>
         <div style="height:1.3em;"></div>
         <span>世嘉智尼五金配件有限公司</span><br>
-        <span class="position">奥山副総経理</span><br>
+        奥山副総経理<br>
         <div style="height:1.3em;"></div>
         <span>広州分公司</span><br>
-        <span class="position">金総経理</span>
+        金総経理
     </div>
     <br>
     <div class="company-logo">
