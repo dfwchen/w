@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 竖屏全屏强制适配、禁止缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>欢迎屏</title>
     <style>
@@ -11,7 +10,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-        /* 竖屏全屏撑满 */
         body {
             background: #111111;
             color: #f5f5f5;
@@ -19,12 +17,11 @@
             height: 100vh;
             height: 100dvh;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            padding: 30px 15px;
+            padding: 20px;
         }
 
-        /* 卡片竖屏拉大、占大部分屏幕 */
         .card {
             position: relative;
             z-index: 10;
@@ -39,11 +36,12 @@
             animation: cardFlow 8s linear infinite;
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 60px 30px;
+            padding: 50px 30px;
             width: 100%;
             max-width: 100%;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
+            text-align: left;
         }
 
         @keyframes cardFlow {
@@ -51,23 +49,21 @@
             100% { background-position: 100% 50%; }
         }
 
-        /* 七彩条左对齐 */
         .line-decor {
             width: 90%;
-            height: 2px;
-            margin: 15px 0 30px 10px;
+            height: 1px;
+            margin: 15px 0 30px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             animation: lineFlow 6s linear infinite;
             box-shadow: 0 0 8px rgba(255,255,255,0.4);
-            border-radius: 2px;
+            border-radius: 1px;
         }
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        /* 竖屏放大字体 */
         .cn-welcome {
             font-size: 31px;
             font-weight: bold;
@@ -78,9 +74,10 @@
             background-clip: text;
             color: transparent;
             animation: goldFlow 5s infinite;
+            text-align: left;
         }
         .jp-welcome {
-            font-size: 18px;
+            font-size: 19px;
             margin: 8px 0 15px 0;
             background: linear-gradient(90deg, #b88c42, #e6c87a);
             background-size: 200% 100%;
@@ -88,6 +85,7 @@
             background-clip: text;
             color: transparent;
             animation: goldFlow 6s infinite;
+            text-align: left;
         }
         @keyframes goldFlow {
             0% { background-position: 0% 50%; }
@@ -99,7 +97,7 @@
             line-height: 1.6;
             font-weight: 500;
             text-align: left;
-            margin: 0 0 40px 10px;
+            margin: 0 0 40px 0;
             color: #fff;
             white-space: nowrap;
         }
@@ -108,32 +106,32 @@
             font-weight: 500;
         }
 
-        /* Logo靠右 + 超强白光 */
         .company-logo {
-            text-align: right;
+            text-align: left;
             margin-bottom: 8px;
-            padding-right: 10px;
+            padding-left: 0;
         }
         .company-logo img {
             height: 50px;
             width: auto;
-            /* 白光拉到最强 */
             filter: drop-shadow(0 0 30px rgba(255,255,255,1)) brightness(1.3);
         }
-        /* 底部文字和Logo同右对齐、对齐边距 */
+
         .leader {
-            text-align: right;
+            text-align: left;
             font-size: 24px;
             color: #a0b4d2;
-            padding-right: 10px;
+            padding-left: 0;
         }
     </style>
 </head>
 
 <body>
+
 <div class="card">
-    <div class="cn-welcome">   热烈欢迎贵宾莅临</div>
-    <div class="jp-welcome">   ご来訪を心より歓迎いたします</div>
+    <div class="cn-welcome">热烈欢迎贵宾莅临</div>
+    <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
+
 
     <div class="guest">
         <span>スガツネ工業株式会社</span><br>
@@ -151,5 +149,6 @@
     </div>
     <div class="leader">森田携全体员工竭诚欢迎</div>
 </div>
+
 </body>
 </html>
