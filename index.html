@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>欢迎屏</title>
     <style>
         * {
@@ -11,158 +11,144 @@
             box-sizing: border-box;
         }
         body {
-            background: #111111;
-            color: #f5f5f5;
-            font-family: "Microsoft YaHei", "黑体", sans-serif;
-            height: 100vh;
-            height: 100dvh;
+            /* 天蓝色底色（你要的颜色） */
+            background: #87CEEB;
+            color: #fff;
+            font-family: "微软雅黑", "黑体", sans-serif;
+            width: 1080px;
+            height: 1920px;
             display: flex;
-            justify-content: flex-start;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
+            text-align: center;
+            padding: 60px;
+            overflow: hidden;
         }
 
+        /* 全屏卡片 */
         .card {
-            position: relative;
-            z-index: 10;
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.12), 
-                rgba(168,209,255,0.2), 
-                rgba(230,200,120,0.15),
-                rgba(168,209,255,0.2),
-                rgba(255,255,255,0.12)
-            );
-            background-size: 400% 100%;
-            animation: cardFlow 8s linear infinite;
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 50px 30px;
             width: 100%;
-            max-width: 100%;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        @keyframes cardFlow {
+        /* 统一七彩动画 */
+        @keyframes rainbowFlow {
             0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        .line-decor {
-            width: 90%;
-            height: 1px;
-            margin: 15px 0 30px 0;
+        /* 跳动动画 */
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        /* 顶部第一行：七彩流光 + 跳动 */
+        .cn-welcome {
+            font-size: 80px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
-            animation: lineFlow 6s linear infinite;
-            box-shadow: 0 0 8px rgba(255,255,255,0.4);
-            border-radius: 1px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbowFlow 3s infinite, bounce 1.2s infinite ease-in-out;
+        }
+
+        /* 第二行文字 */
+        .jp-welcome {
+            font-size: 56px;
+            margin-bottom: 30px;
+            color: #00447a;
+        }
+
+        /* 七彩线条 */
+        .line-decor {
+            width: 90%;
+            height: 4px;
+            margin: 20px auto 50px;
+            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
+            background-size: 700% 100%;
+            animation: lineFlow 0.6s linear infinite;
         }
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        .cn-welcome {
-            font-size: 30px;
-            font-weight: bold;
-            letter-spacing: 4px;
-            background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: goldFlow 5s infinite;
-            text-align: left;
-        }
-        .jp-welcome {
-            font-size: 19px;
-            margin: 8px 0 15px 0;
-            background: linear-gradient(90deg, #b88c42, #e6c87a);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: goldFlow 6s infinite;
-            text-align: left;
-        }
-        @keyframes goldFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
+        /* 中间嘉宾文字 */
         .guest {
-            font-size: 24px;
-            line-height: 1.4;
-            font-weight: 500;
-            text-align: left;
-            margin: 0 0 40px 0;
-            color: #fff;
-            white-space: nowrap;
+            font-size: 58px;
+            line-height: 1.6;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 80px;
         }
         .guest span {
-            color: #5DACFF;
-            font-weight: 500;
+            color: #0055cc;
+            font-weight: bold;
         }
 
-        .company-logo {
-            text-align: left;
-            margin-bottom: 8px;
-            padding-left: 0;
-        }
-        .company-logo img {
-            height: 50px;
-            width: auto;
-            /* LOGO 加强白光发光 */
-            filter: drop-shadow(0 0 22px rgba(255,255,255,1)) brightness(2.4);
-        }
-
-        .leader {
-            text-align: left;
-            font-size: 18px;
-            padding-left: 0;
-            /* 流光金色效果（和顶部完全一致） */
-            background: linear-gradient(90deg, #b88c42, #e6c87a, #f9e9b8);
-            background-size: 200% 100%;
+        /* 底部公司+文字：七彩 */
+        .company, .leader {
+            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
+            background-size: 700% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            /* 反向流动动画 */
-            animation: goldFlowReverse 2s infinite;
+            animation: rainbowFlow 3s infinite;
         }
 
-        /* 新增：反向流动动画 */
-        @keyframes goldFlowReverse {
-            0% { background-position: 200% 50%; }
-            100% { background-position: 0% 50%; }
+        .company {
+            font-size: 54px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .leader {
+            font-size: 42px;
+            line-height: 1.5;
+        }
+
+        @font-face {
+            font-family: 'ArnoldBoeD';
+            src: url('字永浪.ttf') format('truetype');
+        }
+        .ew {
+            font-family: 'ArnoldBoeD', sans-serif;
+            font-size: 60px;
         }
     </style>
 </head>
-
 <body>
 
 <div class="card">
-    <div class="cn-welcome">热烈欢迎贵宾莅临</div>
+    <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
     <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
-   <br><br><br>
 
     <div class="guest">
         <span>スガツネ工業株式会社</span><br>
-        菅佐原社長<br>
-        <div style="height:1.3em;"></div>
-        <span>世嘉智尼五金配件有限公司</span><br>
-        奥山副総経理<br>
-        <div style="height:1.3em;"></div>
+        菅佐原社長<br><br>
+        <span>世嘉智尼五金配件(上海)有限公司</span><br>
+        奥山副総経理<br><br>
         <span>広州分公司</span><br>
         金総経理
     </div>
-    <br>
-    <div class="company-logo">
-        <img src="new-ew-logo.png" alt="Logo">
+
+    <div class="company">
+        <span class="ew">EW</span> 永浪有限公司
     </div>
-        <div style="height:0.1em;"></div>
-    <div class="leader">森田聖治を代表し<br>全社員一同心より歓迎いたします</div>
+    <div class="leader">
+        森田聖治を代表し<br>
+        全社員一同心より歓迎いたします
+    </div>
 </div>
 
 </body>
