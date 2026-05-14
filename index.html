@@ -75,6 +75,8 @@
             color: transparent;
             animation: goldFlow 5s infinite;
             text-align: left;
+            /* 新增：立体阴影 */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .jp-welcome {
             font-size: 19px;
@@ -86,6 +88,8 @@
             color: transparent;
             animation: goldFlow 6s infinite;
             text-align: left;
+            /* 新增：立体阴影 */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         @keyframes goldFlow {
             0% { background-position: 0% 50%; }
@@ -104,6 +108,10 @@
         .guest span {
             color: #5DACFF;
             font-weight: 500;
+        }
+        /* 新增：嘉宾职位金色光晕特效 */
+        .guest .position {
+            text-shadow: 0 0 10px rgba(230, 200, 120, 0.7);
         }
 
         .company-logo {
@@ -149,13 +157,13 @@
 
     <div class="guest">
         <span>スガツネ工業株式会社</span><br>
-        菅佐原社長<br>
+        <span class="position">菅佐原社長</span><br>
         <div style="height:1.3em;"></div>
         <span>世嘉智尼五金配件有限公司</span><br>
-        奥山副総経理<br>
+        <span class="position">奥山副総経理</span><br>
         <div style="height:1.3em;"></div>
         <span>広州分公司</span><br>
-        金総経理
+        <span class="position">金総経理</span>
     </div>
     <br>
     <div class="company-logo">
