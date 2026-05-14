@@ -114,8 +114,8 @@
         .company-logo img {
             height: 50px;
             width: auto;
-            /* 加强蓝色发光 + 提亮，广告屏绝对清晰 */
-            filter: drop-shadow(0 0 22px #1E90FF) brightness(1.4);
+            /* LOGO 加强白光发光 */
+            filter: drop-shadow(0 0 22px rgba(255,255,255,1)) brightness(1.4);
         }
 
         .leader {
@@ -128,7 +128,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: goldFlow 5s infinite;
+            /* 反向流动动画 */
+            animation: goldFlowReverse 5s infinite;
+        }
+
+        /* 新增：反向流动动画 */
+        @keyframes goldFlowReverse {
+            0% { background-position: 200% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
