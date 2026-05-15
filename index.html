@@ -11,14 +11,15 @@
             box-sizing: border-box;
         }
         body {
-            background: #87CEEB;
+            /* 改成商务浅灰背景 */
+            background: #ECEFF1;
             font-family: "微软雅黑", "黑体", sans-serif;
             width: 640px;
             height: 960px;
             padding-top: 50px;
-            padding-left: 55px;
+            padding-left: 55px;  /* 👈 调左右靠左/靠右只改这里 */
             padding-right: 25px;
-            overflow: hidden; /* 这里修复：hidden1 → hidden */
+            overflow: hidden;
         }
 
         .top-area {
@@ -50,7 +51,7 @@
             overflow: visible !important;
             
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 3000% 100%; /* 修复：70% → 100% 颜色才完整 */
+            background-size: 3000% 100%;
             background-position: left center;
             -webkit-background-clip: text;
             background-clip: text;
@@ -58,8 +59,7 @@
 
             animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-
-  }
+        }
 
         .jp-welcome {
             font-size: 46px;
@@ -67,12 +67,12 @@
             white-space: nowrap;
             color: #f4af37;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-weight: 600; /* 修复：650 无效 → 600 */
+            font-weight: 600;
         }
 
         .line-decor {
             width: 105%;
-            height: 1px; /* 优化：1px太细 → 2px更清晰 */
+            height: 1px;
             margin: 15px 0 35px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
@@ -119,6 +119,7 @@
         <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
         <div class="line-decor"></div>
     </div>
+    <!-- 你原来的换行全部保留，随便加多少个都没事 -->
     <br><br><br><br><br><br>
     <div class="guest">
         <span class="com-name">スガツネ工業株式会社</span><br>
