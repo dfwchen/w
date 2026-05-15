@@ -16,17 +16,17 @@
             width: 540px;
             height: 960px;
             padding-top: 50px;
-            padding-left: 70px;
-            padding-right: 30px;
+            padding-left: 35px;  /* 左边空白减少一半 70→35 */
+            padding-right: 20px;
             overflow: hidden;
         }
 
         .top-area {
             width: 100%;
             text-align: left;
+            overflow: visible !important;
         }
 
-        /* 动画定义 */
         @keyframes rainbowFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -41,74 +41,77 @@
             100% { background-position: 100% 50%; }
         }
 
-        /* 第一行：修复七彩文字看不见 加大渐变宽度 + 强制不换行 */
+        /* 顶部标题：再加大3号 + 修复莅临裁剪缺色 */
         .cn-welcome {
-            font-size: 61px;
+            font-size: 76px;
             font-weight: bold;
-            letter-spacing: 4px;
-            margin-bottom: 13px;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
             white-space: nowrap;
-            /* 加宽渐变背景，解决只显阴影不见字 */
+            overflow: visible !important;
+            /* 超大渐变背景 彻底解决末尾字缺彩色、被裁剪 */
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 1200% 100%;
+            background-size: 1800% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
-            text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* 第二行日文 强制不换行 */
+        /* 日文整体大一号 */
         .jp-welcome {
-            font-size: 44px;
-            margin-bottom: 10px;
+            font-size: 48px;
+            margin-bottom: 12px;
             white-space: nowrap;
             color: #d4af37;
-            text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.4);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
             font-weight: 600;
         }
 
-        /* 七彩条 加长1/3 宽度拉宽 */
+        /* 七彩条保持加长1/3 */
         .line-decor {
             width: 113%;
             height: 3px;
-            margin: 15px 0 33px 0;
+            margin: 15px 0 35px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 1200% 100%;
             animation: lineFlow 6.6s linear infinite;
             border-radius: 2px;
         }
 
-        /* 嘉宾区域 全部强制不换行 */
+        /* 嘉宾整体字体大一号 禁止换行 */
         .guest {
-            font-size: 39px;
-            line-height: 1.7;
-            margin-bottom: 52px;
+            font-size: 42px;
+            line-height: 1.8;
+            margin-bottom: 55px;
             text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.35);
             white-space: nowrap;
         }
         .guest .com-name {
             color: #003366;
         }
+        /* 人名单独再大3个号 */
         .guest .person-name {
+            font-size: 52px;
             color: #ffffff;
             font-weight: bold;
-            text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
 
-        /* Logo 放大 */
+        /* Logo同步放大 */
         .logo-img {
-            width: 253px;
+            width: 270px;
             height: auto;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        /* 底部文字 强制不换行 */
+        /* 底部文字大一号 禁止换行 */
         .footer-text {
-            font-size: 32px;
+            font-size: 35px;
             font-weight: 400;
             color: #002b5c;
-            text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
             line-height: 1.3;
             white-space: nowrap;
         }
