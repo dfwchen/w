@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>欢迎屏</title>
+    <title>永浪有限公司</title>
     <style>
         * {
             margin: 0;
@@ -21,38 +21,36 @@
             overflow: hidden;
         }
 
-        /* 顶部取消居中，改为左对齐 */
         .top-area {
             width: 100%;
             text-align: left;
         }
 
-        /* 七彩流光动画 */
+        /* 动画定义 */
         @keyframes rainbowFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* 顶部文字跳动 */
         @keyframes bounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        /* 七彩线条流动 */
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        /* 顶部第一行 放大1/3 禁止换行 */
+        /* 第一行：修复七彩文字看不见 加大渐变宽度 + 强制不换行 */
         .cn-welcome {
             font-size: 61px;
             font-weight: bold;
             letter-spacing: 4px;
             margin-bottom: 13px;
             white-space: nowrap;
+            /* 加宽渐变背景，解决只显阴影不见字 */
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 700% 100%;
+            background-size: 1200% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -60,7 +58,7 @@
             text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.3);
         }
 
-        /* 第二行日文 放大1/3 */
+        /* 第二行日文 强制不换行 */
         .jp-welcome {
             font-size: 44px;
             margin-bottom: 10px;
@@ -70,23 +68,24 @@
             font-weight: 600;
         }
 
-        /* 七彩分隔线 加宽适配 */
+        /* 七彩条 加长1/3 宽度拉宽 */
         .line-decor {
-            width: 85%;
+            width: 113%;
             height: 3px;
             margin: 15px 0 33px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 700% 100%;
+            background-size: 1200% 100%;
             animation: lineFlow 6.6s linear infinite;
             border-radius: 2px;
         }
 
-        /* 嘉宾文字 放大1/3 */
+        /* 嘉宾区域 全部强制不换行 */
         .guest {
             font-size: 39px;
             line-height: 1.7;
             margin-bottom: 52px;
             text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.35);
+            white-space: nowrap;
         }
         .guest .com-name {
             color: #003366;
@@ -97,14 +96,14 @@
             text-shadow: 1.5px 1.5px 4px rgba(0,0,0,0.5);
         }
 
-        /* Logo 放大1/3 */
+        /* Logo 放大 */
         .logo-img {
             width: 253px;
             height: auto;
             margin-bottom: 8px;
         }
 
-        /* 底部文字 放大1/3 */
+        /* 底部文字 强制不换行 */
         .footer-text {
             font-size: 32px;
             font-weight: 400;
@@ -116,7 +115,6 @@
     </style>
 </head>
 <body>
-    <!-- 顶部改为左对齐 -->
     <div class="top-area">
         <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
         <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
@@ -131,7 +129,7 @@
         <span class="com-name">広州分公司</span><br>
         <span class="person-name">金総経理</span>
     </div>
-<br><br><br><br>
+<br><br><br>
     <img src="new-ew-logo.png" alt="LOGO" class="logo-img">
 
     <div class="footer-text">森田聖治を代表し</div>
