@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>欢迎屏</title>
+    <title>永浪有限公司欢迎您</title>
     <style>
         * {
             margin: 0;
@@ -11,17 +11,17 @@
             box-sizing: border-box;
         }
         body {
-            /* 天蓝色底色 */
             background: #87CEEB;
             font-family: "微软雅黑", "黑体", sans-serif;
-            width: 1080px;
-            height: 1920px;
+            width: 540px;
+            height: 960px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 78px;
+            justify-content: flex-start; /* 关键：内容置顶 */
+            align-items: flex-start;     /* 关键：内容靠左 */
+            text-align: left;            /* 文字靠左 */
+            padding: 0 !important;      /* 关键：去掉所有内边距 */
+            margin: 0 !important;
             overflow: hidden;
         }
 
@@ -30,8 +30,10 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start; /* 靠左 */
+            justify-content: flex-start; /* 置顶 */
+            padding: 0;
+            margin: 0;
         }
 
         /* 七彩流光动画 */
@@ -53,33 +55,36 @@
 
         /* 顶部第一行 七彩+跳动 */
         .cn-welcome {
-            font-size: 60px;
+            font-size: 52px;
             font-weight: bold;
-            letter-spacing: 5px;
-            margin-bottom: 13px;
+            letter-spacing: 4px;
+            margin-top: 0;    /* 关键：紧贴顶部 */
+            margin-left: 0;   /* 关键：紧贴左侧 */
+            margin-bottom: 10px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         /* 第二行日文 金色+立体阴影 */
         .jp-welcome {
-            font-size: 43px;
-            margin-bottom: 10px;
+            font-size: 33px;
+            margin-left: 0;
+            margin-bottom: 8px;
             color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
             font-weight: 600;
         }
 
         /* 七彩分隔线 */
         .line-decor {
             width: 90%;
-            height: 3px;
-            margin: 13px auto 33px;
+            height: 2px;
+            margin: 10px 0 25px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
             animation: lineFlow 6.6s linear infinite;
@@ -88,38 +93,38 @@
 
         /* 嘉宾整体文字 带阴影立体 */
         .guest {
-            font-size: 38px;
+            font-size: 36px;
             line-height: 1.6;
-            text-align: center;
-            margin-bottom: 52px;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.35);
+            text-align: left;
+            margin-left: 0;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.35);
         }
-        /* 会社名称 深蓝色带阴影 */
         .guest .com-name {
             color: #003366;
         }
-        /* 社长/副总/总经理 白色+立体阴影 */
         .guest .person-name {
             color: #ffffff;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         /* Logo 样式 */
         .logo-img {
-            width: 247px;
+            width: 290px;
             height: auto;
+            margin-left: 0;
             margin-bottom: 5px;
         }
 
-        /* 底部两行文字：纯色+阴影 */
+        /* 底部文字 */
         .footer-text {
-            font-size: 31px;
+            font-size: 28px;
             font-weight: 400;
             color: #002b5c;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             line-height: 1.2;
-            margin: 0;
+            margin-left: 0;
             padding: 0;
         }
     </style>
@@ -130,7 +135,7 @@
     <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
     <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
     <div class="line-decor"></div>
-    <br><br><br><br>
+
     <div class="guest">
         <span class="com-name">スガツネ工業株式会社</span><br>
         <span class="person-name">菅佐原社長</span><br><br>
@@ -139,12 +144,11 @@
         <span class="com-name">広州分公司</span><br>
         <span class="person-name">金総経理</span>
     </div>
-    <br><br><br><br><br>
+
     <img src="new-ew-logo.png" alt="LOGO" class="logo-img">
 
     <div class="footer-text">森田聖治を代表し</div>
     <div class="footer-text">全社員一同心より歓迎いたします</div>
-
 </div>
 
 </body>
