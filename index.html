@@ -42,27 +42,30 @@
         }
 
         /* 顶部标题：再加大3号 + 修复莅临裁剪缺色 */
-        .cn-welcome {
-            font-size: 76px;
-            font-weight: bold;
-            letter-spacing: 6px;
-            margin-bottom: 15px;
-            white-space: nowrap;
-            overflow: visible !important;
-            /* 超大渐变背景 彻底解决末尾字缺彩色、被裁剪 */
-            background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
-            background-size: 1800% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+      .cn-welcome {
+    font-size: 76px;
+    font-weight: bold;
+    letter-spacing: 3px;     /* 字间距缩小，不往外撑 */
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: visible !important;
+
+    /* 七彩渐变 */
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
+    background-size: 3000% 100%;  /* 拉到极大，彻底覆盖整行文字 */
+    background-position: left center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
         /* 日文整体大一号 */
         .jp-welcome {
             font-size: 48px;
-            margin-bottom: 12px;
+            margin-bottom: 4px;
             white-space: nowrap;
             color: #d4af37;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
@@ -71,7 +74,7 @@
 
         /* 七彩条保持加长1/3 */
         .line-decor {
-            width: 183%;
+            width: 153%;
             height: 1px;
             margin: 15px 0 35px 0;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
@@ -123,12 +126,12 @@
         <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
         <div class="line-decor"></div>
     </div>
-<br><br><br>
+<br><br>
     <div class="guest">
         <span class="com-name">スガツネ工業株式会社</span><br>
-        <span class="person-name">菅佐原社長</span><br><br>
+        <span class="person-name">菅佐原社長</span><br>
         <span class="com-name">世嘉智尼五金配件(上海)有限公司</span><br>
-        <span class="person-name">奥山副総経理</span><br><br>
+        <span class="person-name">奥山副総経理</span><br>
         <span class="com-name">広州分公司</span><br>
         <span class="person-name">金総経理</span>
     </div>
