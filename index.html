@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>永浪有限公司</title>
+    <title>欢迎屏</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            white-space: nowrap; /* 全局禁止自动换行！核心修复 */
         }
         body {
             background: #87CEEB;
             font-family: "微软雅黑", "黑体", sans-serif;
             width: 540px;
             height: 960px;
-            padding-top: 50px;   /* 顶部留50px */
-            padding-left: 70px;  /* 左边留70px */
-            padding-right: 70px;
+            padding-top: 50px;   /* 顶部50px */
+            padding-left: 20px;  /* 左边距缩小，防止换行 */
+            padding-right: 20px; /* 右边也留一点，不贴边 */
             overflow: hidden;
         }
 
-        /* 顶部居中区域：两行文字+七彩线 */
+        /* 顶部居中区域 */
         .top-center {
             width: 100%;
             text-align: center;
@@ -33,22 +34,20 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* 顶部文字跳动 */
         @keyframes bounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        /* 七彩线条流动 */
         @keyframes lineFlow {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
-        /* 顶部第一行 七彩+跳动 */
+        /* 顶部第一行 禁止换行 */
         .cn-welcome {
             font-size: 46px;
             font-weight: bold;
-            letter-spacing: 4px;
+            letter-spacing: 2px; /* 字间距缩小一点，不换行 */
             margin-bottom: 10px;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
             background-size: 700% 100%;
@@ -57,20 +56,23 @@
             color: transparent;
             animation: rainbowFlow 8s infinite, bounce 13.2s infinite ease-in-out;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            white-space: nowrap !important; /* 强制不换行 */
+            overflow: visible;
         }
 
-        /* 第二行日文 金色+立体阴影 */
+        /* 第二行日文 禁止换行 */
         .jp-welcome {
             font-size: 33px;
             margin-bottom: 8px;
             color: #d4af37;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
             font-weight: 600;
+            white-space: nowrap !important; /* 强制不换行 */
         }
 
         /* 七彩分隔线 */
         .line-decor {
-            width: 90%;
+            width: 85%;
             height: 2px;
             margin: 10px auto 25px auto;
             background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0099FF, #0000FF, #9400D3);
@@ -79,7 +81,10 @@
             border-radius: 1px;
         }
 
-        /* 嘉宾整体文字 带阴影立体 */
+        /* 嘉宾文字 允许换行（保持原样） */
+        .guest, .guest * {
+            white-space: normal;
+        }
         .guest {
             font-size: 29px;
             line-height: 1.6;
@@ -95,7 +100,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Logo 样式 */
+        /* Logo */
         .logo-img {
             width: 190px;
             height: auto;
@@ -109,18 +114,18 @@
             color: #002b5c;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             line-height: 1.2;
+            white-space: nowrap !important;
         }
     </style>
 </head>
 <body>
-    <!-- 顶部两行文字 + 七彩条 单独居中 -->
+
     <div class="top-center">
         <div class="cn-welcome">热烈欢迎 贵宾莅临</div>
         <div class="jp-welcome">ご来訪を心より歓迎いたします</div>
         <div class="line-decor"></div>
     </div>
 
-    <!-- 下方内容保持左对齐70px边距 -->
     <div class="guest">
         <span class="com-name">スガツネ工業株式会社</span><br>
         <span class="person-name">菅佐原社長</span><br><br>
