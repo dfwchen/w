@@ -138,23 +138,21 @@
             line-height: 1.2;
         }
 
-        /* === LOGO 可自由左右调整 === */
+        /* LOGO 去掉所有发光遮罩 */
         .logo-img {
             width: 280px;
             height: auto;
             margin: 15px 0 10px;
-            /* 发光效果（和底部日文一致） */
-            filter: drop-shadow(0 0 12px rgba(255,255,255,0.7)) drop-shadow(0 0 25px rgba(173, 216, 230, 0.8));
-            opacity: 0.98;
-            
-            /* 位置调整：正数=向右，负数=向左 */
+            filter: none;
+            opacity: 1;
             transform: translateX(-6px);
         }
 
+        /* 底部文字改用和公司名一致阴影，取消发光 */
         .footer-text {
             font-size: 34px;
             color: #002b5c;
-            text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 25px rgba(173, 216, 230, 0.8);
+            text-shadow: 0 2px 5px rgba(0,20,40,0.8);
             line-height: 1.4;
             white-space: nowrap;
             letter-spacing: 1px;
