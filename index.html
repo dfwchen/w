@@ -12,13 +12,12 @@
         }
 
         body {
-            /* ========== 这里换成你的本地图片作为背景 ========== */
             background-image: url("555.jpg"); /* 改成你附件的文件名 */
             background-size: cover;       /* 自动铺满屏幕 */
             background-position: center;  /* 居中显示 */
             background-repeat: no-repeat; /* 不重复 */
             background-attachment: fixed; /* 固定不动 */
-            
+            background: #bebebe;
             font-family: "微软雅黑", "Helvetica Neue", "黑体", sans-serif;
             width: 640px;
             height: 960px;
@@ -30,7 +29,6 @@
             align-items: center;
             justify-content: space-between;
             color: #eef5ff;
-            box-shadow: none;
             -webkit-user-select: none;
             user-select: none;
         }
@@ -41,7 +39,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
             text-align: center;
         }
 
@@ -55,35 +52,30 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+
         @keyframes softBounce {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.04); }
         }
+
         @keyframes lineShimmer {
             0% { background-position: 0% 50%; }
             100% { background-position: 200% 50%; }
-        }
-        @keyframes goldShimmer {
-            0% { opacity: 0.5; }
-            50% { opacity: 0.9; }
-            100% { opacity: 0.5; }
         }
 
         .cn-welcome {
             font-size: 64px;
             font-weight: 800;
             letter-spacing: 5px;
-            margin-top: 60px;
+            margin-top: 70px;
             margin-bottom: 3px;
             white-space: nowrap;
             background: linear-gradient(90deg, #FF3366, #FF9933, #FFD700, #33CC66, #00BFFF, #7B2FBE, #FF1493);
             background-size: 400% 100%;
-            background-position: left center;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: rainbowFlow 9s infinite, softBounce 11s infinite ease-in-out;
-            text-shadow: none;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
             line-height: 1.2;
         }
@@ -92,8 +84,8 @@
             font-size: 40px;
             margin-bottom: 5px;
             white-space: nowrap;
-            color: #ffffff;
-            text-shadow: 
+            color: #fbe522;
+            text-shadow:
                 0 2px 8px rgba(240, 230, 140, 0.5),
                 0 2px 3px rgba(0, 0, 0, 0.55),
                 0 0 2px rgba(0, 0, 0, 0.65);
@@ -103,20 +95,19 @@
 
         .line-decor {
             width: 90%;
-            height: 2px;
-            margin: 20px auto 25px auto;
+            height: 1px;
+            margin: 20px auto 25px;
             background: linear-gradient(90deg, #FF3366, #FFB347, #FFD700, #32CD32, #1E90FF, #BA55D3, #FF3366);
             background-size: 200% 100%;
             animation: lineShimmer 5s linear infinite;
-            border-radius: 2px;
+            border-radius: 1px;
             box-shadow: 0 0 12px rgba(255,215,0,0.5);
         }
 
-        /* 嘉宾信息区域 */
         .guest {
             font-size: 38px;
             line-height: 1.4;
-            margin: 10px 0 20px 0;
+            margin: 10px 0 20px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             white-space: nowrap;
             width: 100%;
@@ -125,59 +116,49 @@
             align-items: center;
         }
 
-        /* 公司名称 */
         .guest .com-name {
-           color: #002b5c;
+            color: #002b5c;
             font-weight: 400;
             letter-spacing: 1px;
             font-size: 40px;
-            display: block;
             margin-top: 32px;
             margin-bottom: 6px;
             line-height: 1.2;
             text-shadow: 0 2px 5px rgba(0,20,40,0.8);
         }
 
-        /* 人物姓名 */
         .guest .person-name {
             font-size: 54px;
-            color: #ffffff;
+            color: #fff;
             font-weight: bold;
             text-shadow: 0 0 15px rgba(218, 180, 75, 0.9), 0 4px 10px rgba(0,0,0,0.8);
             letter-spacing: 3px;
-            display: block;
             margin-top: 6px;
             margin-bottom: 32px;
             line-height: 1.2;
         }
 
-        .guest br {
-            display: none;
-        }
-
+        /* === LOGO 可自由左右调整 === */
         .logo-img {
             width: 280px;
             height: auto;
-            margin: 15px 0 10px 0;
-            /* 白光滤镜 */
-            filter: brightness(1.3) contrast(1.1) drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
-            opacity: 0.95;
-            transition: transform 0.3s ease;
+            margin: 15px 0 10px;
+            /* 发光效果（和底部日文一致） */
+            filter: drop-shadow(0 0 12px rgba(255,255,255,0.7)) drop-shadow(0 0 25px rgba(173, 216, 230, 0.8));
+            opacity: 0.98;
+            
+            /* 位置调整：正数=向右，负数=向左 */
+            transform: translateX(-6px);
         }
 
-        /* 底部两行日文：改为白光 */
         .footer-text {
             font-size: 34px;
-            font-weight: 500;
-            color: #ffffff;
-            text-shadow: 
-                0 0 15px rgba(255, 255, 255, 0.8),
-                0 0 30px rgba(255, 255, 255, 0.4),
-                0 2px 4px rgba(0, 0, 0, 0.5);
+            color: #002b5c;
+            text-shadow: 0 0 12px rgba(255,255,255,0.7), 0 0 25px rgba(173, 216, 230, 0.8);
             line-height: 1.4;
             white-space: nowrap;
             letter-spacing: 1px;
-            background: transparent;
+            font-weight: 500;
         }
 
         .bottom-section {
@@ -188,7 +169,6 @@
             margin-top: auto;
             width: 100%;
         }
-
     </style>
 </head>
 <body>
@@ -199,8 +179,6 @@
             <div class="line-decor"></div>
         </div>
 
-        <br><br>
-        
         <div class="guest">
             <span class="com-name">スガツネ工業株式会社</span>
             <span class="person-name">菅佐原社長</span>
@@ -210,10 +188,8 @@
             <span class="person-name">金総経理</span>
         </div>
 
-        <br><br><br>
-
         <div class="bottom-section">
-            <img src="new-ew-logo.png" alt="永浪有限公司 LOGO" class="logo-img">
+            <img src="new-ew-logo.png" alt="LOGO" class="logo-img">
             <div class="footer-text">森田聖治を代表し</div>
             <div class="footer-text">全社員一同心より歓迎いたします！</div>
         </div>
